@@ -5,12 +5,14 @@ import Header from "../Header";
 import Itens from "../Itens";
 import { SectionMain } from "../MainContent";
 import NoItens from "../NoItens";
+import { NoItensFound } from "../NoItensFound";
 
 const ProductsList = () => {
   const [productsList, setProductsList] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [notFound, setNotFound] = useState(true)
 
   useEffect(() => {
     setLoading(true);
@@ -32,10 +34,13 @@ const ProductsList = () => {
       <Header
         productsList={productsList}
         setFilteredProducts={setFilteredProducts}
+        filteredProducts={filteredProducts}
+        notFound={notFound}
+        setNotFound={setNotFound}
       />
       <SectionMain>
         <div>
-          <ul className="main-list">
+          {notFound ? <ul className="main-list">
             {filteredProducts.length === 0
               ? productsList.map(({ id, name, img, category, price }) => (
                   <Itens
@@ -63,7 +68,8 @@ const ProductsList = () => {
                     filteredProducts={filteredProducts}
                   />
                 ))}
-          </ul>
+          </ul> : <NoItensFound/>}
+         
           {cartProducts.length === 0 ? (
             <NoItens />
           ) : (

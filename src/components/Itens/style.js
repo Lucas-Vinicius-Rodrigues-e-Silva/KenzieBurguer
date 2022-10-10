@@ -61,6 +61,7 @@ export const AllItens = styled.li`
     cursor: pointer;
     transition: 0.25s;
     margin-bottom: 1rem;
+    height:35px;
   }
 
   > button:hover {

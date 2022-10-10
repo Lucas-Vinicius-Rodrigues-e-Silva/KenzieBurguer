@@ -2,6 +2,7 @@ import { AllItens } from "./style";
 import React from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NoItensFound } from "../NoItensFound";
 
 const Itens = ({
   name,
@@ -38,15 +39,15 @@ const Itens = ({
   }
 
   return (
-    <AllItens>
-      <img src={image} alt={name} />
-      <h2>{name}</h2>
-      <p>{category}</p>
-      <span>R${price}</span>
-      <button id={id} onClick={addToCart}>
-        Adicionar
-      </button>
-    </AllItens>
+     <AllItens>
+    <img src={image} alt={name} />
+    <h2>{name}</h2>
+    <p>{category}</p>
+    <span>R${price}</span>
+    <button id={id} onClick={addToCart}>
+      Adicionar
+    </button>
+  </AllItens>
   );
 };
 
