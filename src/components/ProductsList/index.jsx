@@ -14,8 +14,6 @@ const ProductsList = () => {
   const [notFound, setNotFound] = useState(true)
 
   useEffect(() => {
-    setLoading(true);
-
     api
       .get("produtos")
       .then((res) => {
@@ -24,7 +22,6 @@ const ProductsList = () => {
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        setLoading(false);
       });
   }, []);
 
