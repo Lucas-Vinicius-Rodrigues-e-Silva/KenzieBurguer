@@ -17,7 +17,7 @@ const Itens = ({
     const itemId = event.target.id;
 
     const findTheSameProduct = cartProducts.find(
-      (product) => product.id === itemId
+      (product) => product.id == itemId
     );
 
     if (findTheSameProduct) {
@@ -32,7 +32,7 @@ const Itens = ({
         progress: undefined,
         });
     } else {
-      const newProduct = productsList.find((product) => product.id === itemId);
+      const newProduct = productsList.find((product) => product.id == itemId);
       setCartProducts([...cartProducts, newProduct]);
     }
   }
