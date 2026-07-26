@@ -18,7 +18,7 @@ const ProductsList = () => {
     setLoading(true);
 
     api
-      .get("products")
+      .get("produtos")
       .then((res) => {
         const { data } = res;
         setProductsList(data);

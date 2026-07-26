@@ -10,6 +10,7 @@ export const AllItens = styled.li`
   border: 2px solid var(--color-grey-20);
   border-radius: 5px;
   transition: 0.25s;
+  margin-bottom: 10px;
 
   :hover {
     border: 2px solid var(--color-grey-100);

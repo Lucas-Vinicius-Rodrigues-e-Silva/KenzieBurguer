@@ -24,6 +24,7 @@ const InputSearch = ({
       });
     }
     const correctSearch = item.toLocaleLowerCase();
+    console.log(productsList)
     const products = productsList.filter(
       (product) =>
         product.name.toLowerCase().includes(correctSearch) ||
