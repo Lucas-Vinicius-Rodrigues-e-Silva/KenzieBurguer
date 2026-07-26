@@ -10,7 +10,6 @@ import { NoItensFound } from "../NoItensFound";
 const ProductsList = () => {
   const [productsList, setProductsList] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [notFound, setNotFound] = useState(true)
 
